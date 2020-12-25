@@ -7,8 +7,8 @@ billDividerFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\Mast
 MasterFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterSample.xlsx"
 MasterFile = pd.read_excel(MasterFilePath, sheet_name='ToSplitSample', index_col=0)
 billDivider = pd.read_excel(billDividerFilePath)
-billDividerPersonalEntries = billDivider[billDivider["Cash Out"]=="No"]
-billDividerCashoutEntries = billDivider[billDivider["Cash Out"]=="Yes"]
+billDividerPersonalEntries = billDivider[billDivider["Cash Out"] == "No"]
+billDividerCashoutEntries = billDivider[billDivider["Cash Out"] == "Yes"]
 cols = ['Tirth', 'Saurav', 'Sachin', 'Meet' ]
 df = pd.DataFrame(columns=['index', 'Date', 'Location', 'Amount', 'Category'])
 

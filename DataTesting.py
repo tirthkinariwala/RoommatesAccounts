@@ -15,7 +15,8 @@ del df
 
 
 folder = input('File Path: ')
-#   \\AURORA\Users\Public\Documents\Accounts 2020\Raw\
+#   \\AURORA\Users\Public\Documents\Accounts 2020\ProcessedRaw\
+
 entries = os.listdir(folder)
 entries = [folder + x for x in entries]
 # makes an array of all the files in the folder of interest
