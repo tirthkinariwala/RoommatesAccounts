@@ -1,19 +1,21 @@
 import pandas as pd
-import os
+
 
 # mydict = pd.read_csv('/Users/saurav/Desktop/MasterBD.csv', header=None, index_col=0, squeeze=True).to_dict()
-
-billDividerFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterBD.xlsx"
-MasterFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterSample.xlsx"
-MasterFile = pd.read_excel(MasterFilePath, sheet_name='ToSplitSample', index_col=0)
+# "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterBD.xlsx"
+# "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterSample.xlsx"
+billDividerFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\BillDivider\\outputWithBillUID.xlsx"
+MasterFilePath = "\\\\AURORA\\Users\\Public\\Documents\\Accounts 2020\\MasterSheet\\output3(with Nov Accounts).xlsx"
+MasterFile = pd.read_excel(MasterFilePath, sheet_name='To Split Sheet', index_col=0)
 billDivider = pd.read_excel(billDividerFilePath)
 billDividerPersonalEntries = billDivider[billDivider["Cash Out"] == "No"]
 billDividerCashoutEntries = billDivider[billDivider["Cash Out"] == "Yes"]
-cols = ['Tirth', 'Saurav', 'Sachin', 'Meet' ]
+cols = ['Tirth', 'Saurav', 'Sachin', 'Meet']
 df = pd.DataFrame(columns=['index', 'Date', 'Location', 'Amount', 'Category'])
 
-print(MasterFile.to_string())
+# print(MasterFile.to_string())
 BeenSplit = MasterFile.loc[MasterFile['Empty'] == 'x']
+# print(MasterFile.to_string())
 
 with pd.ExcelWriter('TEST.xlsx') as writer:
     for col in cols:
